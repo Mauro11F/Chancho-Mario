@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4oqtc7udo00w"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Menu.gd" id="1_71luk"]
+[ext_resource type="Theme" uid="uid://b3oeepvpaeylk" path="res://Assets/setting/new_theme.tres" id="1_j4uqj"]
+[ext_resource type="Texture2D" uid="uid://6557vmxxucch" path="res://Assets/setting/background.png" id="2_mcrcm"]
+[ext_resource type="AudioStream" uid="uid://hfvoqicecacl" path="res://Assets/Audio/bgMusic.ogg" id="4_cyr3i"]
+[ext_resource type="AudioStream" uid="uid://osgkdwtssqge" path="res://Assets/Audio/CollectCoin.wav" id="4_q7bi2"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_j4uqj")
+script = ExtResource("1_71luk")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mcrcm")
+
+[node name="Title" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -45.0
+offset_right = 160.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Titulo_1" type="Label" parent="Title"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Demo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Titulo_2" type="Label" parent="Title"]
+layout_mode = 2
+text = "El Mario Chancho"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 16.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+alignment = 1
+
+[node name="Select" type="AudioStreamPlayer" parent="Buttons"]
+stream = ExtResource("4_q7bi2")
+
+[node name="Iniciar" type="Button" parent="Buttons"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Iniciar"
+flat = true
+
+[node name="Salir" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Salir"
+flat = true
+
+[node name="MusicBG" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_cyr3i")
+volume_db = -19.429
+autoplay = true
+
+[connection signal="pressed" from="Buttons/Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="Buttons/Salir" to="." method="_on_salir_pressed"]

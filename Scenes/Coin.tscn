@@ -1,0 +1,72 @@
+[gd_scene load_steps=13 format=3 uid="uid://dgde3qsf73jqy"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Coin.gd" id="1_c3b8f"]
+[ext_resource type="Texture2D" uid="uid://bbi1mse8hhota" path="res://Assets/Collectibles/EffectsCoins/SmallCoins/effect_coin_1.png" id="2_16tus"]
+[ext_resource type="Texture2D" uid="uid://crayhtespov0d" path="res://Assets/Collectibles/EffectsCoins/SmallCoins/effect_coin_2.png" id="3_51262"]
+[ext_resource type="Texture2D" uid="uid://dr6ief625duh" path="res://Assets/Collectibles/EffectsCoins/SmallCoins/effect_coin_3.png" id="4_c4vta"]
+[ext_resource type="Texture2D" uid="uid://c61i6rsuhoe7a" path="res://Assets/Collectibles/EffectsCoins/SmallCoins/effect_coin_4.png" id="5_jfwj6"]
+[ext_resource type="Texture2D" uid="uid://csbqqek02g2j0" path="res://Assets/Collectibles/Coins/coin_bronze1_1.png" id="6_7gq2l"]
+[ext_resource type="Texture2D" uid="uid://yopcii3w7dhf" path="res://Assets/Collectibles/Coins/coin_bronze1_2.png" id="7_5osby"]
+[ext_resource type="Texture2D" uid="uid://cw6kwkq2cagsp" path="res://Assets/Collectibles/Coins/coin_bronze1_3.png" id="8_ykaca"]
+[ext_resource type="Texture2D" uid="uid://bxwjc3plcly6w" path="res://Assets/Collectibles/Coins/coin_bronze1_4.png" id="9_f1kl2"]
+[ext_resource type="AudioStream" uid="uid://osgkdwtssqge" path="res://Assets/Audio/CollectCoin.wav" id="10_ncxwt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sagrc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_16tus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_51262")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c4vta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jfwj6")
+}],
+"loop": false,
+"name": &"Off",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_7gq2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5osby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ykaca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_f1kl2")
+}],
+"loop": true,
+"name": &"On",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a85gi"]
+size = Vector2(14, 14)
+
+[node name="Coin" type="Area2D"]
+collision_layer = 8
+monitorable = false
+script = ExtResource("1_c3b8f")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sagrc")
+animation = &"On"
+autoplay = "On"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a85gi")
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_ncxwt")
+volume_db = -12.4
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="Sound" to="." method="_on_sound_finished"]

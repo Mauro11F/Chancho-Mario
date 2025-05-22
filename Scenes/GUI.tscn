@@ -1,0 +1,80 @@
+[gd_scene load_steps=4 format=3 uid="uid://cldnqdu4ukseq"]
+
+[ext_resource type="Theme" uid="uid://b3oeepvpaeylk" path="res://Assets/setting/new_theme.tres" id="1_dnmyy"]
+[ext_resource type="Script" path="res://Assets/Scripts/GUI.gd" id="1_qm435"]
+[ext_resource type="AudioStream" uid="uid://4pw5twg7rwd2" path="res://Assets/Audio/GameOver.ogg" id="3_dl2f6"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_qm435")
+
+[node name="Container" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_dnmyy")
+
+[node name="Label" type="Label" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 8
+text = "Score: 0000"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.733333, 0, 0.0313726, 0.835294)
+
+[node name="VBox" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_dnmyy")
+
+[node name="Label" type="Label" parent="ColorRect/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "JA!
+MORISTE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBox" type="HBoxContainer" parent="ColorRect/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Restart" type="Button" parent="ColorRect/VBox/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 8
+text = "Restart"
+
+[node name="Salir" type="Button" parent="ColorRect/VBox/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 8
+text = "Salir"
+flat = true
+
+[node name="Sound" type="AudioStreamPlayer" parent="ColorRect"]
+stream = ExtResource("3_dl2f6")
+
+[connection signal="pressed" from="ColorRect/VBox/HBox/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="ColorRect/VBox/HBox/Salir" to="." method="_on_salir_pressed"]

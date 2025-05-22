@@ -1,0 +1,156 @@
+[gd_scene load_steps=28 format=3 uid="uid://d4eaxv5wj5ket"]
+
+[ext_resource type="Texture2D" uid="uid://01r0ssalxjqm" path="res://Assets/Characters/Enemies/Enemy01/Idle/Idle 01.png" id="1_d6lve"]
+[ext_resource type="Script" path="res://Assets/Scripts/Enemy01.gd" id="1_udiie"]
+[ext_resource type="Texture2D" uid="uid://i12s7w0i3c5r" path="res://Assets/Characters/Enemies/Enemy01/Death/Dead Hit 01.png" id="2_twfjg"]
+[ext_resource type="Texture2D" uid="uid://vyxltthpeniq" path="res://Assets/Characters/Enemies/Enemy01/Idle/Idle 02.png" id="2_xy8ex"]
+[ext_resource type="Texture2D" uid="uid://ctd4162eo12y0" path="res://Assets/Characters/Enemies/Enemy01/Idle/Idle 03.png" id="3_0ga7x"]
+[ext_resource type="Texture2D" uid="uid://5gfr8ycv6xn" path="res://Assets/Characters/Enemies/Enemy01/Death/Dead Hit 02.png" id="3_fqbp8"]
+[ext_resource type="Texture2D" uid="uid://dl0kbsi6so3mu" path="res://Assets/Characters/Enemies/Enemy01/Death/Dead Hit 03.png" id="4_7o2v0"]
+[ext_resource type="Texture2D" uid="uid://dsh4bntpfvr0k" path="res://Assets/Characters/Enemies/Enemy01/Idle/Idle 04.png" id="4_cvcq4"]
+[ext_resource type="Texture2D" uid="uid://bk1ttqw03kgjx" path="res://Assets/Characters/Enemies/Enemy01/Idle/Idle 05.png" id="5_ab0pp"]
+[ext_resource type="Texture2D" uid="uid://bfcvyi2s57llk" path="res://Assets/Characters/Enemies/Enemy01/Death/Dead Hit 04.png" id="5_h6xoq"]
+[ext_resource type="Texture2D" uid="uid://doqmrbg6jmk38" path="res://Assets/Characters/Enemies/Enemy01/Idle/Idle 06.png" id="6_8mnpg"]
+[ext_resource type="Texture2D" uid="uid://c180obkxpb08l" path="res://Assets/Characters/Enemies/Enemy01/Death/effect_dead_1.png" id="6_uu68m"]
+[ext_resource type="Texture2D" uid="uid://cwm6jv568qiiq" path="res://Assets/Characters/Enemies/Enemy01/Death/effect_dead_2.png" id="7_u36ci"]
+[ext_resource type="Texture2D" uid="uid://cs4nahhuv27jg" path="res://Assets/Characters/Enemies/Enemy01/Idle/Idle 07.png" id="7_x1ff6"]
+[ext_resource type="Texture2D" uid="uid://c055jt7w80xs1" path="res://Assets/Characters/Enemies/Enemy01/Idle/Idle 08.png" id="8_chm3h"]
+[ext_resource type="Texture2D" uid="uid://coqh33eapj71b" path="res://Assets/Characters/Enemies/Enemy01/Death/effect_dead_3.png" id="8_o0xmn"]
+[ext_resource type="Texture2D" uid="uid://bxxwdafpb3xn8" path="res://Assets/Characters/Enemies/Enemy01/Death/effect_dead_4.png" id="9_wpwmv"]
+[ext_resource type="Texture2D" uid="uid://crxgbfcuhdx0w" path="res://Assets/Characters/Enemies/Enemy01/Death/effect_dead_5.png" id="10_nwhyg"]
+[ext_resource type="Texture2D" uid="uid://bp63f2ulj20rf" path="res://Assets/Characters/Enemies/Enemy01/Walk/Run 01.png" id="19_ajauy"]
+[ext_resource type="Texture2D" uid="uid://bt2am08tg2ejo" path="res://Assets/Characters/Enemies/Enemy01/Walk/Run 02.png" id="20_cbqjs"]
+[ext_resource type="Texture2D" uid="uid://h1ibvyyiu55o" path="res://Assets/Characters/Enemies/Enemy01/Walk/Run 03.png" id="21_j80c6"]
+[ext_resource type="Texture2D" uid="uid://dbyecv0288i70" path="res://Assets/Characters/Enemies/Enemy01/Walk/Run 04.png" id="22_2co3q"]
+[ext_resource type="Texture2D" uid="uid://fwqpak7jwa1m" path="res://Assets/Characters/Enemies/Enemy01/Walk/Run 05.png" id="23_3huic"]
+[ext_resource type="Texture2D" uid="uid://b5htkqs468gfm" path="res://Assets/Characters/Enemies/Enemy01/Walk/Run 06.png" id="24_2tua8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lqx3x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_twfjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fqbp8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7o2v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_h6xoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uu68m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_u36ci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_o0xmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wpwmv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_nwhyg")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_d6lve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xy8ex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0ga7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cvcq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ab0pp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8mnpg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_x1ff6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_chm3h")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_ajauy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_cbqjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_j80c6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_2co3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_3huic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_2tua8")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5v40k"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kstbb"]
+size = Vector2(18, 19)
+
+[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 2
+collision_mask = 7
+platform_floor_layers = 4294967044
+platform_wall_layers = 4
+script = ExtResource("1_udiie")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -14)
+sprite_frames = SubResource("SpriteFrames_lqx3x")
+animation = &"Idle"
+autoplay = "Walk"
+flip_h = true
+
+[node name="RayGround" type="RayCast2D" parent="Sprite"]
+position = Vector2(7, 9)
+target_position = Vector2(0, 10)
+collision_mask = 4
+hit_from_inside = true
+
+[node name="AreaHit" type="Area2D" parent="Sprite"]
+position = Vector2(-8, 0)
+monitorable = false
+
+[node name="CollisionSecundaria" type="CollisionShape2D" parent="Sprite/AreaHit"]
+visible = false
+position = Vector2(18, 0)
+shape = SubResource("RectangleShape2D_5v40k")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(1, -11.5)
+shape = SubResource("RectangleShape2D_kstbb")
+
+[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
+[connection signal="body_entered" from="Sprite/AreaHit" to="." method="_on_area_hit_body_entered"]
