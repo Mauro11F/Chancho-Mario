@@ -32,7 +32,7 @@ Chancho Mario es una demo jugable que incluye las mecánicas básicas de un jueg
 
 1. Clona o descarga este repositorio.
 2. Abre el proyecto desde **Godot 4.x**.
-3. Ejecutá la escena principal (probablemente `Main.tscn` o `World.tscn`).
+3. Ejecutá la escena principal (`Menu.tscn` o directamente `Level.tscn`).
 4. ¡Jugá y explorá el código!
 
 ```bash
@@ -56,12 +56,28 @@ git clone https://github.com/Mauro11F/Chancho-Mario
 ```bash
 chancho-mario/
 │
-├── player/             # Scripts y sprites del jugador
-├── levels/             # Escenas de niveles
-├── gui/                # Elementos HUD (puntaje, UI)
-├── items/              # Objetos recolectables
-├── main.tscn           # Escena principal
-├── project.godot       # Archivo de proyecto
+├── Assets/
+|    ├── Audio/                 # Audios del juego
+|    ├── Characters/
+|    |    ├── Player/           # Sprites de animaciones del personaje
+|    |    |    ├── Dead/
+|    |    |    ├── Run/
+|    |    |    ├── .../
+|    |    ├── Enemies/
+|    |    |    ├── Enemy01/     # Sprites de las animaciones del enemigo
+|    |    |    ├── Spike/       # Animaciones de las trampas
+|    ├── Collectibles/
+|    |    ├── Coins/            # Sprites de la moneda
+|    |    ├── EffectsCoins/     # Efecto de recoger moneda
+|    ├── Enviroment/
+|    |    ├── background01/     # Contenido del Parallax Background
+|    |    ├── ground/           # El png del terreno utilizado en el tilemap
+|    |    ├── stage_objects/    # Objetos del escenario (Palmeras, vegetacion, etc)
+|    ├── GUI/                   # Elementos Banner del menu
+|    ├── Scripts/               # Scripts de todos los objetos
+|    ├── Setting/               # background y temas
+|    |    ├── Font/             # Fuentes utilizadas
+├── Scenes/                     # Escenas de todos los objetos
 └── README.md
 ```
 
